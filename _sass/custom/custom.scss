@@ -1,3 +1,10 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #EEE8FF;
+}
+
 .side-bar {
   color: #EEE8FF;
   background-color: #EEE8FF;
