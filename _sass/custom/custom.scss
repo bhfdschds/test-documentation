@@ -1,15 +1,16 @@
 .site-header {
-  color: #EEE8FF;
-  background-color: #EEE8FF;
-  z-index: 0;
+  position: sticky;
+  top: 0;
   z-index: 100;
+  background-color: #EEE8FF;
 }
 
+/* Ensure the search container is also sticky */
 .search {
-  color: #EEE8FF;
-  background-color: #EEE8FF;
-  z-index: 0;
+  position: sticky;
+  top: 0;
   z-index: 101;
+  background-color: #EEE8FF;
 }
 
 .side-bar {
