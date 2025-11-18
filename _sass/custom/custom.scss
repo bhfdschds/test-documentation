@@ -1,4 +1,5 @@
 .main-header {
+  color: #EEE8FF;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -6,6 +7,7 @@
 }
 
 .search {
+  color: #EEE8FF;
   position: sticky;
   top: 0;
   z-index: 101;
@@ -14,6 +16,7 @@
 
 .side-bar {
   color: #EEE8FF;
+  position: sticky;
   background-color: #EEE8FF;
   background-image: none;
   transition: none; 
