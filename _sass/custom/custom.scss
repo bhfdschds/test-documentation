@@ -84,4 +84,6 @@ a.nav-list-link active{
 .site-button:hover{
 background-image:linear-gradient(-90deg, #F4EFFF 0%, #F4EFFF 80%, #F4EFFF 100%)
 }
-  
+
+/* ===== STICKY SEARCH BAR ===== */ .site-header {  
+  position: sticky;  top: 0;  z-index: 100;  background-color: #EEE8FF;  box-shadow: 0 2px 4px rgba(160, 0, 60, 0.1); }
