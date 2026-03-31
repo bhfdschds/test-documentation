@@ -5,8 +5,6 @@ nav_order: 1
 permalink: /
 ---
 
-{% include context7-widget.html %}
-
 <a href="https://bhfdatasciencecentre.org/" target = "_blank">
   <img src="https://bhfdsc.github.io/documentation/assets/images/bhf_dsc_logo.png" alt="BHF DSC logo" style="width: 300px; height: 100px" />
 </a>
@@ -67,3 +65,5 @@ For any enquiries, or if you have any resources you would like to contribute to 
         <td>Zach Welshman, Health Data Scientist</td>    
   </tr>
 </table>
+
+{% include context7-widget.html %}
