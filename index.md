@@ -5,6 +5,8 @@ nav_order: 1
 permalink: /
 ---
 
+{% include context7-widget.html %}
+
 <a href="https://bhfdatasciencecentre.org/" target = "_blank">
   <img src="https://bhfdsc.github.io/documentation/assets/images/bhf_dsc_logo.png" alt="BHF DSC logo" style="width: 300px; height: 100px" />
 </a>
