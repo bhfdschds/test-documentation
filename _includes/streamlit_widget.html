@@ -1,39 +1,38 @@
-<!-- Floating Chat Widget -->
-<div id="streamlit-widget-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: sans-serif;">
+<div id="streamlit-widget-root" style="position: fixed; bottom: 20px; right: 20px; z-index: 2147483647;">
   
-  <!-- The App Window (Hidden by default) -->
-  <div id="streamlit-window" style="display: none; width: 350px; height: 500px; background: white; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); overflow: hidden; margin-bottom: 15px; border: 1px solid #eee;">
-    <div style="background: #FF4B4B; color: white; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center;">
-      <span style="font-weight: bold; font-size: 14px;">Doc Assistant</span>
-      <button onclick="toggleStreamlit()" style="background: none; border: none; color: white; cursor: pointer; font-size: 20px;">&times;</button>
+  <!-- Chat Window -->
+  <div id="streamlit-window" style="display: none; width: 350px; height: 500px; background: white; border-radius: 12px; box-shadow: 0 5px 40px rgba(0,0,0,0.16); overflow: hidden; margin-bottom: 15px; border: 1px solid #e0e0e0;">
+    <div style="background: #FF4B4B; color: white; padding: 12px; display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-weight: 600; font-family: sans-serif;">Doc Assistant</span>
+      <button onclick="toggleStreamlitChat()" style="background: none; border: none; color: white; cursor: pointer; font-size: 22px; line-height: 1;">&times;</button>
     </div>
     <iframe
       src="https://streamlit.app"
       width="100%"
-      height="455px"
+      height="450px"
       style="border: none;"
-      allow="camera; microphone; clipboard-read; clipboard-write"
+      allow="clipboard-read; clipboard-write"
       sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
     ></iframe>
   </div>
 
-  <!-- The Floating Button -->
-  <button id="streamlit-launcher" onclick="toggleStreamlit()" style="background: #FF4B4B; color: white; border: none; padding: 12px 20px; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 8px; float: right;">
-    <span id="chat-icon">💬</span> Chat with our docs
+  <!-- Launcher Button -->
+  <button id="streamlit-launcher" onclick="toggleStreamlitChat()" style="background: #FF4B4B; color: white; border: none; padding: 12px 24px; border-radius: 50px; cursor: pointer; font-weight: bold; font-family: sans-serif; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 8px;">
+    <span style="font-size: 18px;">💬</span> Chat with our docs
   </button>
 </div>
 
 <script>
-  function toggleStreamlit() {
-    var windowDiv = document.getElementById('streamlit-window');
-    var launcher = document.getElementById('streamlit-launcher');
+  function toggleStreamlitChat() {
+    var win = document.getElementById('streamlit-window');
+    var btn = document.getElementById('streamlit-launcher');
     
-    if (windowDiv.style.display === 'none') {
-      windowDiv.style.display = 'block';
-      launcher.style.display = 'none'; // Optional: hide button when open
+    if (win.style.display === 'none' || win.style.display === '') {
+      win.style.display = 'block';
+      btn.style.display = 'none';
     } else {
-      windowDiv.style.display = 'none';
-      launcher.style.display = 'flex';
+      win.style.display = 'none';
+      btn.style.display = 'flex';
     }
   }
 </script>
