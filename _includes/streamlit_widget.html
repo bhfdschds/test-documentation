@@ -1,26 +1,39 @@
-<!-- Button to trigger the pop-up -->
-<button onclick="document.getElementById('streamlit-modal').style.display='block'" class="open-btn">
-  Launch App
-</button>
-
-<!-- The Modal (Hidden by default) -->
-<div id="streamlit-modal" class="modal-overlay" onclick="this.style.display='none'">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="close-btn" onclick="document.getElementById('streamlit-modal').style.display='none'">&times;</span>
+<!-- Floating Chat Widget -->
+<div id="streamlit-widget-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: sans-serif;">
+  
+  <!-- The App Window (Hidden by default) -->
+  <div id="streamlit-window" style="display: none; width: 350px; height: 500px; background: white; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); overflow: hidden; margin-bottom: 15px; border: 1px solid #eee;">
+    <div style="background: #FF4B4B; color: white; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-weight: bold; font-size: 14px;">Doc Assistant</span>
+      <button onclick="toggleStreamlit()" style="background: none; border: none; color: white; cursor: pointer; font-size: 20px;">&times;</button>
+    </div>
     <iframe
-      src="https://global-mcp-doc-context7.streamlit.app/?embed=true"
+      src="https://streamlit.app"
       width="100%"
-      height="600px"
-      style="border: none; border-radius: 8px;"
+      height="455px"
+      style="border: none;"
       allow="camera; microphone; clipboard-read; clipboard-write"
       sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
     ></iframe>
   </div>
+
+  <!-- The Floating Button -->
+  <button id="streamlit-launcher" onclick="toggleStreamlit()" style="background: #FF4B4B; color: white; border: none; padding: 12px 20px; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 8px; float: right;">
+    <span id="chat-icon">💬</span> Chat with our docs
+  </button>
 </div>
 
-<style>
-  .modal-overlay { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
-  .modal-content { position: relative; margin: 5% auto; padding: 20px; width: 80%; background: #fff; border-radius: 12px; }
-  .close-btn { position: absolute; right: 20px; top: 10px; font-size: 28px; cursor: pointer; }
-  .open-btn { padding: 10px 20px; background: #FF4B4B; color: white; border: none; border-radius: 5px; cursor: pointer; }
-</style>
+<script>
+  function toggleStreamlit() {
+    var windowDiv = document.getElementById('streamlit-window');
+    var launcher = document.getElementById('streamlit-launcher');
+    
+    if (windowDiv.style.display === 'none') {
+      windowDiv.style.display = 'block';
+      launcher.style.display = 'none'; // Optional: hide button when open
+    } else {
+      windowDiv.style.display = 'none';
+      launcher.style.display = 'flex';
+    }
+  }
+</script>
