@@ -1,11 +1,26 @@
-<!-- _includes/streamlit_widget.html -->
-<div class="streamlit-container">
-  <iframe
-    src="{{ include.url | default: 'https://global-mcp-doc-context7.streamlit.app/?embed=true' }}"
-    width="100%"
-    height="{{ include.height | default: '500px' }}"
-    style="border: none; border-radius: 8px;"
-    allow="camera; microphone; clipboard-read; clipboard-write"
-    sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
-  ></iframe>
+<!-- Button to trigger the pop-up -->
+<button onclick="document.getElementById('streamlit-modal').style.display='block'" class="open-btn">
+  Launch App
+</button>
+
+<!-- The Modal (Hidden by default) -->
+<div id="streamlit-modal" class="modal-overlay" onclick="this.style.display='none'">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick="document.getElementById('streamlit-modal').style.display='none'">&times;</span>
+    <iframe
+      src="https://global-mcp-doc-context7.streamlit.app/?embed=true"
+      width="100%"
+      height="600px"
+      style="border: none; border-radius: 8px;"
+      allow="camera; microphone; clipboard-read; clipboard-write"
+      sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+    ></iframe>
+  </div>
 </div>
+
+<style>
+  .modal-overlay { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
+  .modal-content { position: relative; margin: 5% auto; padding: 20px; width: 80%; background: #fff; border-radius: 12px; }
+  .close-btn { position: absolute; right: 20px; top: 10px; font-size: 28px; cursor: pointer; }
+  .open-btn { padding: 10px 20px; background: #FF4B4B; color: white; border: none; border-radius: 5px; cursor: pointer; }
+</style>
