@@ -69,7 +69,7 @@ For any enquiries, or if you have any resources you would like to contribute to 
 <iframe
   src="https://global-mcp-doc-context7.streamlit.app/?embed=true"
   width="100%"
-  height="800px"
+  height="500px"
   style="border: none; border-radius: 8px;"
   allow="camera; microphone; clipboard-read; clipboard-write"
   sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
