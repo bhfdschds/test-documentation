@@ -66,30 +66,13 @@ For any enquiries, or if you have any resources you would like to contribute to 
   </tr>
 </table>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCP Doc Chat</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html { height: 100%; }
-    iframe {
-      width: 100%;
-      height: 100vh;
-      border: none;
-      display: block;
-    }
-  </style>
-</head>
-<body>
-  <iframe
-    src="https://global-mcp-doc-chat.streamlit.app/?embed=true"
-    allow="camera; microphone; clipboard-read; clipboard-write"
-    sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
-  ></iframe>
-</body>
-</html>
+<iframe
+  src="https://global-mcp-doc-chat.streamlit.app/?embed=true"
+  width="100%"
+  height="800px"
+  style="border: none; border-radius: 8px;"
+  allow="camera; microphone; clipboard-read; clipboard-write"
+  sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+></iframe>
 
 {% include context7-widget.html %}
