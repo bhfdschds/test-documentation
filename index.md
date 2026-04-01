@@ -74,5 +74,3 @@ For any enquiries, or if you have any resources you would like to contribute to 
   allow="camera; microphone; clipboard-read; clipboard-write"
   sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
 ></iframe>
-
-{% include context7-widget.html %}
